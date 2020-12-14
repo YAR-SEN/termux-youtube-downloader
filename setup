@@ -23,7 +23,7 @@ echo  ""
 
 sleep 2
 
-pkg install python wget ffmpeg ncurses-utils figlet -y && pip install youtube-dl
+pkg install python ffmpeg ncurses-utils figlet -y && pip install youtube-dl
 
 mkdir ~/bin
 
