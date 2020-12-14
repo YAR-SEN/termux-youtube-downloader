@@ -1,4 +1,4 @@
-#termux-youtube-downloader
+## termux-youtube-downloader
 Работает через кнопку "поделиться", может скачивать:
 - Видео с YouTube 480/720
 - Звук из видео с YouTube
@@ -10,8 +10,8 @@
 ![](https://i.imgur.com/tfEoVpb.jpg)
 ![](https://i.imgur.com/Erun7yD.jpg)
 
-<code>pkg instal git -y && git clone https://github.com/nyafka666/termux-youtube-downloader && cd ~/termux-youtube-downloader && chmod +x * && bash setup.sh && ./setup && rm -rf ~/termux-youtube-downloader
-</code>
+```
+pkg instal git -y && git clone https://github.com/nyafka666/termux-youtube-downloader && cd ~/termux-youtube-downloader && chmod +x * && bash setup.sh && ./setup && rm -rf ~/termux-youtube-downloader
+```
 
-  
-Приятного использования!) :kissing_heart:
+**** Приятного использования!) :kissing_heart:
