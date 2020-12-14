@@ -1,0 +1,112 @@
+#!/bin/bash
+echo 'Termux Load by NyafkA v1.1'
+figlet -f slant "T-Load"
+#figlet TermuxLoad
+echo ''
+echo ''
+#spin () {
+
+#local pid=$!
+#local delay=0.25
+#local spinner=( '█■■■■' '■█■■■' '■■█■■' '■■■█■' '■■■■█' )
+#будет загрузка,когда разберусь
+
+#====================================
+
+if [[ $1 =~ ^.*github.com.*$ ]];
+then
+        echo 'Ссылка определена как github.com!'
+        echo ''
+        echo '[1] git clone'
+        echo '[2] скачать сайт'
+        read -p "> " -n 1 -r
+        echo $'\n'
+
+        if [[ $REPLY =~ ^[1]$ ]];
+        then
+                echo 'Клонирование git...'
+                git clone $1
+                echo ''
+                echo 'Сохранено в ~/'
+                sleep 2
+        elif [[ $REPLY =~ ^[2]$ ]];
+        then
+                echo 'скоро'
+        fi
+
+elif [[ $1 =~  ^http[s]?:\/\/[a-z]{0,10}[\.]?youtu[\.]?be(\.com)?.*$ ]]
+then
+        echo 'Ссылка определена как youtube!'
+        echo ''
+        echo $'[1] Скачать видео 480p'
+        echo $'[2] Скачать видео 720p'
+        echo $'[3] Скачать аудио'
+        echo ''
+        read -p "> " -n 1 -r
+        echo $'\n'
+
+        if [[ $REPLY =~ ^[3]$ ]];
+        then
+                #echo 'Извиняемся за баг, что-бы выйти нажмите CTRL+C'
+                #youtube-dl -f 'bestaudio' -o '~/storage/TermuxLoad/audio/%(title)s.f%(format_id)s.%(ext)s' $1
+                youtube-dl --extract-audio -f 'bestaudio' --audio-format mp3 --audio-quality 0 -o '~/storage/shared/TermuxLoad/audio/%(title)s.%(ext)s'                         >
+                #&> /dev/null & spin;
+                echo ''
+                echo 'Сохранено в storage/TermuxLoad/audio'
+                sleep 2
+
+        elif [[ $REPLY =~ ^[1]$ ]];
+        then
+                echo 'Скачивание видео...'
+                youtube-dl -f "best[height<=480]" -o "~/storage/shared/TermuxLoad/video/%(title)s.%(ext)s" $1
+                echo ''
+                echo 'Сохранено в storage/TermuxLoad/video'
+                sleep 2
+
+        elif [[ $REPLY =~ ^[2]$ ]];
+        then
+                echo 'Скачивание видео...'
+                youtube-dl -f "best[height<=720]" -o "~/storage/shared/TermuxLoad/video/%(title)s.%(ext)s" $1
+                echo ''
+                echo 'Сохранено в storage/TermuxLoad/video'
+                sleep 2
+        fi
+#====================================
+
+else
+        echo $'[1] Скачать сайт'
+        echo $'[2] Скачать файл по ссылке'
+        echo $'[3] Скачать видео с сайта'
+        echo ''
+        read -p "> " -n 1 -r
+        echo $'\n'
+
+
+        if [[ $REPLY =~ ^[3]$ ]];
+        then
+                echo 'Скачивание видео...'
+                youtube-dl -o "~/storage/shared/TermuxLoad/video/%(title)s.%(ext)s" $1
+
+
+        elif [[ $REPLY =~ ^[1]$ ]];
+        then
+                echo 'скоро' 
+                #wget -c -r -k -l 2 -p -E -nc -np -A pdf $1
+                #httrack "https://mail.ru/?from=m" -r2 -F "Mozilla/5.0 (Linux; U; Android 2.3; ru-ru) AppleWebKit/999+ (KHTML, like Gecko) Safari/999.9                         >
+
+        elif [[ $REPLY =~ ^[2]$ ]];
+        then
+                echo 'Скачивание файла в ~/'
+                wget $1
+
+
+
+        else
+                echo "Exiting..."
+
+        fi
+#else
+#       echo Unhandled URL type: $1
+#       sleep 10
+
+fi
