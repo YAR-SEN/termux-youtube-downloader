@@ -2,7 +2,7 @@
 
 # -------------------------------
 # Info:
-#   author	: Viliyam Vasava
+#   author	: Nyafka666 & Viliyam Vasava
 #   file	: setup
 #   created	: 29.11.2018
 #   revision	: 29.11.2018
@@ -23,7 +23,7 @@ echo  ""
 
 sleep 2
 
-pkg install python ffmpeg ncurses-utils figlet -y && pip install youtube-dl
+pkg install python wget ffmpeg ncurses-utils figlet -y && pip install youtube-dl
 
 mkdir ~/bin
 
