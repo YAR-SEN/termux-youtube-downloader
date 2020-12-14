@@ -1,5 +1,5 @@
 #!/bin/bash
-echo 'Termux Load by NyafkA v1.1'
+echo 'Termux-Load by NyafkA & Viliyam v1.1'
 figlet -f slant "T-Load"
 #figlet TermuxLoad
 echo ''
@@ -47,7 +47,6 @@ then
 
         if [[ $REPLY =~ ^[3]$ ]];
         then
-                #echo 'Извиняемся за баг, что-бы выйти нажмите CTRL+C'
                 #youtube-dl -f 'bestaudio' -o '~/storage/TermuxLoad/audio/%(title)s.f%(format_id)s.%(ext)s' $1
                 youtube-dl --extract-audio -f 'bestaudio' --audio-format mp3 --audio-quality 0 -o '~/storage/shared/TermuxLoad/audio/%(title)s.%(ext)s'                         >
                 #&> /dev/null & spin;
@@ -98,8 +97,6 @@ else
         then
                 echo 'Скачивание файла в ~/'
                 wget $1
-
-
 
         else
                 echo "Exiting..."
