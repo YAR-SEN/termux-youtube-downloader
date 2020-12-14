@@ -8,5 +8,5 @@
 
 
 <code>
-pkg instal git -y && git clone https://github.com/viliyam2811/termux-youtube-downloader && cd ~/termux-youtube-downloader && chmod +x * && bash setup.sh && ./setup && rm -rf ~/termux-youtube-downloader
+pkg instal git -y && git clone https://github.com/nyafka666/termux-youtube-downloader && cd ~/termux-youtube-downloader && chmod +x * && bash setup.sh && ./setup && rm -rf ~/termux-youtube-downloader
 </code>
